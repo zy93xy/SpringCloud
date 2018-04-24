@@ -1,0 +1,17 @@
+info:
+  profile: default
+  from: git-repo
+  
+server:
+  port: 12345
+eureka:
+  instance:
+    hostname: app.server
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+    name: bigdata-server
